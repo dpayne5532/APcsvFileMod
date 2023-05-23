@@ -12,6 +12,10 @@ def update_csv_file(input_file, output_file):
                 value_p = row[15]
                 row[8] = value_p[:8]
 
+            # Change value in column J (10th column) to "Check"
+            if len(row) > 9:
+                row[9] = "Check"
+
             # Add 1014 to column X (24th column)
             if len(row) > 23:
                 value_x = row[23]
@@ -30,5 +34,6 @@ def update_csv_file(input_file, output_file):
 input_file = 'input.csv'
 output_file = 'output.csv'
 update_csv_file(input_file, output_file)
+
 
 
