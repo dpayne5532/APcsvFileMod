@@ -5,6 +5,10 @@ def update_csv_file(input_file, output_file):
         reader = csv.reader(file)
         rows = list(reader)  # Read all rows into a list
 
+         # Delete the first row (header row)
+        if rows:
+            del rows[0]
+
         # Make changes to the desired columns
         for row in rows:
             # Copy first 8 characters of column P (16th column) to column I (9th column)
